@@ -1,0 +1,263 @@
+# VoiceDOT Payment Platform Specification
+
+This document outlines the design and step-by-step implementation plan for a **voice-controlled payment platform** built on the Polkadot blockchain.
+
+The API enables voice-to-blockchain transactions, allowing users to send **DOT and other Polkadot ecosystem tokens** through natural voice commands. The system processes voice input, extracts payment intent, confirms transactions through voice responses, and executes transfers on the Polkadot network.
+
+Platform is built with:
+- **Cloudflare Workers** (Edge Runtime)
+- **Hono** (TypeScript API Framework)
+- **ElevenLabs** (Voice Processing)
+- **PAPI** (Polkadot Blockchain Integration)
+
+---
+
+## 1. Technology Stack
+
+| Component               | Technology       |
+|-------------------------|-----------------|
+| **Edge Runtime**        | Cloudflare Workers |
+| **API Framework**       | Hono.js           |
+| **Voice Processing**    | ElevenLabs API    |
+| **Blockchain**          | PAPI (Polkadot API)|
+| **Database**            | Cloudflare D1 (SQLite) |
+| **ORM**                 | Drizzle ORM       |
+
+---
+
+## 2. Database Schema Design
+
+The database stores transaction logs, user sessions, and voice command history for audit and debugging.
+
+### 2.1. Users Table
+
+| Column         | Type       | Constraints      |
+|----------------|------------|-----------------|
+| id             | TEXT       | Primary Key     |
+| wallet_address | TEXT       | NOT NULL, UNIQUE|
+| created_at     | INTEGER    | NOT NULL        |
+| last_active    | INTEGER    | NOT NULL        |
+
+### 2.2 Transactions Table
+
+| Column           | Type   | Constraints                       |
+|------------------|--------|-----------------------------------|
+| id               | TEXT   | Primary Key                       |
+| user_id          | TEXT   | Foreign Key (users.id)            |
+| voice_command    | TEXT   | NOT NULL                          |
+| parsed_intent    | TEXT   | NOT NULL (JSON string)            |
+| recipient_address| TEXT   | NOT NULL                          |
+| amount           | TEXT   | NOT NULL (supports big numbers)   |
+| token_symbol     | TEXT   | NOT NULL                          |
+| transaction_hash | TEXT   |                                   |
+| status           | TEXT   | NOT NULL ('pending', 'confirmed', 'failed') |
+| created_at       | INTEGER| NOT NULL                          |
+| confirmed_at     | INTEGER|                                   |
+
+### 2.3 Voice_Sessions Table
+
+| Column             | Type     | Constraints      |
+|--------------------|----------|-----------------|
+| id                 | TEXT     | Primary Key     |
+| user_id            | TEXT     | Foreign Key (users.id) |
+| audio_url          | TEXT     |                 |
+| transcription      | TEXT     |                 |
+| response_audio_url | TEXT     |                 |
+| response_text      | TEXT     |                 |
+| created_at         | INTEGER  | NOT NULL        |
+
+---
+
+## 3. API Endpoints
+
+Endpoints are organized for **voice processing**, **transaction management**, and **wallet operations**.
+
+### 3.1 Voice Processing Endpoints
+
+**POST `/voice/process`**  
+_Process voice input for payment commands_
+
+**Payload Example**:
+
+{
+"audio_data": "base64_encoded_audio",
+"user_id": "wallet_address_or_session_id",
+"format": "mp3|wav|webm"
+}
+
+_Returns_: Parsed intent and confirmation audio.
+
+---
+
+**POST `/voice/confirm`**  
+_Process voice confirmation for pending transactions_
+
+**Payload Example**:
+
+{
+"audio_data": "base64_encoded_audio",
+"transaction_id": "uuid",
+"user_id": "wallet_address_or_session_id"
+}
+
+
+---
+
+### 3.2 Transaction Endpoints
+
+**GET `/transactions`**  
+_Retrieve user transaction history_  
+Query Params: `user_id`, `status`, `limit`, `offset`
+
+**GET `/transactions/:id`**  
+_Get specific transaction details_  
+Path Param: transaction ID
+
+**POST `/transactions/execute`**  
+_Execute confirmed transaction on Polkadot network_
+
+**Payload Example**:
+
+{
+"transaction_id": "uuid",
+"signed_extrinsic": "hex_string"
+}
+
+
+---
+
+### 3.3 Wallet Integration Endpoints
+
+**POST `/wallet/connect`**  
+_Connect and verify wallet for voice payments_
+
+**Payload Example**:
+
+{
+"wallet_address": "polkadot_address",
+"signature": "signed_message",
+"message": "verification_message"
+}
+
+
+**GET `/wallet/balance`**  
+_Get wallet balance for supported tokens_  
+Query Params: `wallet_address`, `token_symbols`
+
+---
+
+### 3.4 Health and Status Endpoints
+
+**GET `/health`**  
+_API health check and service status_
+
+**GET `/status/polkadot`**  
+_Polkadot network connection status_
+
+---
+
+## 4. Integrations
+
+### 4.1 ElevenLabs Integration
+
+- Speech-to-text for voice commands
+- Text-to-speech for confirmations and responses
+- Voice cloning for personalized responses *(future)*
+
+### 4.2 PAPI (Polkadot API) Integration
+
+- Connect to Polkadot/parachain networks
+- Query balances and transaction history
+- Submit/monitor extrinsics (transactions)
+- Handle runtime upgrades and metadata changes
+
+### 4.3 Wallet Integration
+
+- Support for Polkadot.js, Talisman, SubWallet
+- Message signing for authentication
+- Transaction signing delegation
+
+---
+
+## 5. Development Milestones
+
+### Milestone 1: Enhanced Voice Processing & Multi-Currency Support
+
+**Focus**: Advanced voice capabilities and comprehensive token support
+
+#### Core Features
+- **Perplexity.ai NLP** for natural language understanding and complex payment commands
+    - Real-time web knowledge
+    - Intent recognition/entity extraction
+    - Multi-language support ready
+- **Multi-Currency Support**
+    - DOT transfers
+    - Parachain tokens (USDT, USDC, ACA, GLMR, etc.)
+    - Real-time price conversion
+    - Cross-parachain asset discovery
+- **Complex Commands**
+    - Batch transactions ("Send 5 DOT to Alice and 10 USDT to Bob")
+    - Conditional payments ("Send 5 DOT to Alice if my balance is above 100 DOT")
+    - Scheduled payments with voice confirmation
+    - Transaction templates/shortcuts
+
+#### Technical Implementation
+- Perplexity.ai integration for advanced NLP
+- PAPI for multi-chain asset queries
+- Improved voice pipeline
+- Intelligent command parsing/validation
+
+---
+
+### Milestone 2: Cross-Chain Integration & Production Security
+
+**Focus**: XCM cross-chain capabilities and enterprise-grade security
+
+#### Core Features
+- **XCM Support**
+    - Cross-parachain asset transfers via voice
+    - Relay chain ↔ parachain operations
+    - Cross-chain DeFi operations
+    - Real-time XCM transaction tracking
+- **Production Security**
+    - End-to-end encrypted voice data
+    - Secure key management/hardware wallet support
+    - Transaction signing w/ multiple confirmations
+    - Audit logging, rate limiting, fraud detection
+- **Multi-Factor Authentication**
+    - Voice biometric authentication
+    - Hardware wallet (Ledger, Trezor) integration
+    - Time-based OTP
+    - Behavioral anomaly detection
+    - Emergency recovery
+
+#### Technical Implementation
+- XCM message construction/execution
+- Advanced cryptographic security
+- Biometric voice analysis
+- Production monitoring/alerting
+- Compliance/regulatory support
+
+---
+
+## 6. Security Considerations
+
+- Wallet private keys **never stored** on the platform
+- Voice data **encrypted** in transit **and** at rest
+- Transaction signing is **client-side**
+- Rate limiting on voice endpoints
+- Audit logs for all transactions and commands
+
+---
+
+## 7. Environment Variables
+
+The following environment variables must be set in the Cloudflare Workers environment:
+
+ELEVENLABS_API_KEY # ElevenLabs API authentication
+POLKADOT_RPC_ENDPOINT # Polkadot network RPC URL
+DATABASE_URL # Cloudflare D1 database connection
+ENCRYPTION_KEY # For encrypting sensitive voice data
+
+undefined
+

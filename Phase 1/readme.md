@@ -42,6 +42,15 @@
 │ (Recognition)   │    │ (SubWallet)     │    │ (ink! Records)  │
 └─────────────────┘    └─────────────────┘    └─────────────────┘
 ```
+<img width="1122" height="807" alt="Echopay-2 System Architecture" src="https://github.com/user-attachments/assets/dacf88a0-dd6a-4444-83a6-25f786f1ec4a" />
+```
+<img width="1358" height="817" alt="EchoPay Voice Payment Flow" src="https://github.com/user-attachments/assets/99e6d576-9e55-49dc-82dd-8f02fd124d9c" />
+```
+<img width="1262" height="696" alt="EchoPay-2 Data Flow Diagram" src="https://github.com/user-attachments/assets/fa8133d8-55dc-4822-82d5-a01cfbd8daa2" />
+```
+<img width="2400" height="3200" alt="echopay_user_flow" src="https://github.com/user-attachments/assets/2f452a52-ef61-4118-8f40-72ca4ac5a43e" />
+```
+
 
 ### Technology Stack
 

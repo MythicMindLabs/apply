@@ -78,12 +78,12 @@
 
 | **Issue ID** | **Description** | **Severity** | **Impact** | **Resolution ETA** | **Workaround** |
 |--------------|----------------|:------------:|:----------:|:------------------:|----------------|
-| **BUG-001** | Multiple wallet conflict | Medium | Wallet selection UX | v1.1.0 (Sept 2025) | Manual wallet selection |
-| **BUG-002** | Heavy accent recognition | Medium | Voice accuracy | v1.2.0 (Oct 2025) | Manual input fallback |
+| **BUG-001** | Multiple wallet conflict | Medium | Wallet selection UX |  | Manual wallet selection |
+| **BUG-002** | Heavy accent recognition | Medium | Voice accuracy |  | Manual input fallback |
 | **BUG-003** | Safari Web Speech API | Low | Browser compatibility | N/A (Apple limitation) | Use keyboard input |
-| **BUG-004** | Voice timeout accessibility | Medium | Accessibility | v1.1.0 (Sept 2025) | Configurable timeout |
-| **BUG-005** | Smart contract integration | Low | History feature | v1.3.0 (Nov 2025) | Local storage backup |
-| **BUG-006** | XCM cross-chain placeholder | Low | Future feature | v2.0.0 (Q1 2026) | Single-chain only |
+| **BUG-004** | Voice timeout accessibility | Medium | Accessibility | | Configurable timeout |
+| **BUG-005** | Smart contract integration | Low | History feature | | Local storage backup |
+| **BUG-006** | XCM cross-chain placeholder | Low | Future feature |  | Single-chain only |
 
 ---
 

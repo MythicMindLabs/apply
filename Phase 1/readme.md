@@ -54,6 +54,7 @@
 
 ### Technology Stack
 
+
 | Layer | Technology | Purpose |
 |-------|------------|---------|
 | **Frontend** | React + TypeScript | User interface and interactions |
@@ -232,21 +233,8 @@ npm run lint
 
 ## 📱 Technology Stack
 
-```mermaid
-graph TD
-    A[React + TypeScript] --> B[Vite Build System]
-    B --> C[Tailwind CSS]
-    C --> D[Polkadot.js API]
-    D --> E[Web Speech API]
-    E --> F[PWA Features]
-    
-    G[@polkadot/api] --> H[SubWallet Integration]
-    G --> I[Talisman Integration]
-    G --> J[Native DOT Transfers]
-    
-    style A fill:#61dafb
-    style D fill:#e6007a
-    style F fill:#5a67d8
+```
+<img width="1027" height="630" alt="Web Application Architecture" src="https://github.com/user-attachments/assets/b934f9ce-b857-467d-8a61-9252efcbb024" />
 ```
 
 ---

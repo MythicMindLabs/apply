@@ -233,11 +233,10 @@ npm run lint
 
 ## 📱 Technology Stack
 
-```
-<img width="1027" height="630" alt="Web Application Architecture" src="https://github.com/user-attachments/assets/b934f9ce-b857-467d-8a61-9252efcbb024" />
-```
 
 ---
+<img width="1027" height="630" alt="Web Application Architecture" src="https://github.com/user-attachments/assets/f1110012-ef0f-4b53-8f92-fcc9179e956e" />
+
 
 ## 🎯 Next Development Steps
 

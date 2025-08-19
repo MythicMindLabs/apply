@@ -262,14 +262,6 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 
 ---
 
-## 📞 **Support**
-
-- 🐛 **Issues**: [GitHub Issues](https://github.com/MythicMindLabs/apply/issues)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/MythicMindLabs/apply/discussions)
-- 📧 **Email**: echopay2@proton.me
-
----
-
 ## 🌍 **Join the Voice Revolution**
 
 EchoPay-2 is more than just a payment system - it's a gateway to an accessible Web3 future. By combining cutting-edge voice technology with Polkadot's innovative blockchain infrastructure, we're breaking down barriers and opening cryptocurrency to everyone.

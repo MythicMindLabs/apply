@@ -19,6 +19,9 @@
 - **Talisman Extension**: [Download](https://talisman.xyz/)
 - **Note**: App works without wallet (demo mode)
 
+
+<img width="1122" height="807" alt="Main Page" src="https://github.com/MythicMindLabs/apply/blob/master/Phase%202/diagrams/Main%20Page.png" />
+
 ---
 
 ## 🎙️ Voice Commands to Test
@@ -29,7 +32,10 @@
 "Check my balance"
 "Show transaction history"
 "Add contact Bob 5GrwvaEF..."
+
 ```
+<img width="1122" height="807" alt="add contract" src="https://github.com/MythicMindLabs/apply/blob/master/Phase%202/diagrams/add%20contract%20name.png" />
+
 
 ### **Advanced Commands**
 ```
@@ -38,6 +44,7 @@
 "What's my current balance?"
 "Show me my recent transactions"
 ```
+<img width="1122" height="807" alt="add contract" src="https://github.com/MythicMindLabs/apply/blob/master/Phase%202/diagrams/add%20contract%20name.png" />
 
 ---
 
@@ -49,6 +56,9 @@
 - [ ] **Address Book**: Check Alice & Bob pre-loaded contacts
 - [ ] **Manual Fallback**: Test transaction forms manually
 - [ ] **Network Selection**: Toggle between networks (DOT/WND/ROC)
+
+<img width="1122" height="807" alt="voice input" src="https://github.com/MythicMindLabs/apply/blob/master/Phase%202/diagrams/voice%20input.png"/>
+
 
 ### **User Interface Tests**
 - [ ] **Responsive Design**: Test on mobile and desktop

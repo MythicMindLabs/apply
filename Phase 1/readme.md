@@ -1,3 +1,105 @@
+**Revolutionary voice-activated payment dApp that makes Polkadot blockchain accessible to everyone through natural language commands.**
+
+> 🏆 **3rd Place Winner** - London Polkadot 2025 Hackathon  
+
+---
+
+## 🌟 Key Features
+
+### 🎤 Voice-First Experience
+- **Natural Language Processing** - "Send 5 DOT to Alice" 
+- **Speech Recognition** - Browser-based Web Speech API
+- **Voice Synthesis** - ElevenLabs powered responses
+- **Accessibility Focus** - Support for users with disabilities
+
+### 🔗 Polkadot Integration
+- **Multi-Network Support** - DOT, WND, ROC, local networks
+- **Wallet Compatibility** - SubWallet, Talisman, Polkadot{.js}
+- **Native Transactions** - Direct blockchain interactions
+- **Smart Contract Logging** - ink! payment recorder
+
+### 🚀 Advanced Capabilities
+- **Cross-Chain Ready** - Future XCM protocol support
+- **Real-time Processing** - Instant voice command handling
+- **Transaction History** - Complete payment tracking
+- **Mobile Responsive** - PWA support for mobile devices
+
+---
+
+## 🏗️ Architecture Overview
+
+### System Components
+
+```
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   User Voice    │───▶│  Frontend App   │───▶│ Blockchain APIs │
+│   Interface     │    │  (React/TS)     │    │  (Polkadot)     │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+         │                       │                       │
+         ▼                       ▼                       ▼
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│ Speech Services │    │ Wallet Services │    │ Smart Contracts │
+│ (Recognition)   │    │ (SubWallet)     │    │ (ink! Records)  │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+```
+
+### Technology Stack
+
+| Layer | Technology | Purpose |
+|-------|------------|---------|
+| **Frontend** | React + TypeScript | User interface and interactions |
+| **Build** | Vite + Tailwind CSS | Development and styling |
+| **Blockchain** | Polkadot.js API | Network connectivity |
+| **Voice** | Web Speech API + ElevenLabs | Voice processing |
+| **Contracts** | ink! (Rust) | On-chain payment records |
+| **Testing** | Vitest + Playwright | Unit and E2E testing |
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- **Node.js** (v18+) and npm
+- **Rust toolchain** (stable) 
+- **Polkadot wallet extension** (SubWallet recommended)
+- **Modern browser** with Web Speech API support
+
+
+### First Transaction
+
+1. 🔗 **Connect your wallet** (SubWallet/Talisman)
+2. 🎤 **Click the microphone button**
+3. 🗣️ **Say**: *"Send 1 WND to [address]"*
+4. ✅ **Confirm transaction details**
+5. 📝 **Sign with your wallet**
+6. 🎉 **Receive voice confirmation**
+
+---
+
+## 📚 Usage Examples
+
+### Voice Commands
+
+| Command | Description | Example |
+|---------|-------------|---------|
+| **Send** | Transfer cryptocurrency | *"Send 5 DOT to Alice"* |
+| **Balance** | Check account balance | *"Check my balance"* |
+| **History** | View transactions | *"Show my history"* |
+| **Help** | Available commands | *"Help"* |
+| **Cancel** | Cancel operation | *"Cancel"* |
+
+### Supported Networks
+
+- **Polkadot Mainnet** (DOT) - Production network
+- **Westend Testnet** (WND) - Primary testnet 
+- **Rococo Testnet** (ROC) - Parachain testing
+- **Local Node** (UNIT) - Development environment
+
+---
+
+## 🛠️ Development
+
 # EchoPay-2 MVP - Complete File Structure
 
 ## 📁 Root Configuration Files (9 files)

@@ -11,6 +11,10 @@
 
 **Voice-activated payments are now reality!** EchoPay-2 successfully delivers:
 
+
+<img width="1122" height="807" alt="User Flow Diagram" src="https://github.com/MythicMindLabs/apply/blob/master/Phase%202/diagrams/User%20Flow%20Diagram%20-Echo%20Pay2.png" />
+
+
 - 🎤 **Advanced voice recognition** with 95%+ accuracy
 - 💰 **Multi-currency support** (DOT, WND, ROC, DEV)
 - 🔗 **Multi-wallet integration** (SubWallet, Talisman, Polkadot.js)
@@ -22,6 +26,7 @@
 [Milestone 1](
 https://github.com/MythicMindLabs/apply/blob/master/Phase%202/doc/Milestone%20Goals%201.md)
 
+<img width="1122" height="807" alt="Context Diagram Voice Payment System" src="https://github.com/MythicMindLabs/apply/blob/master/Phase%202/diagrams/Context%20Diagram%20Voice%20Payment%20System.png" />
 
 ---
 
@@ -50,6 +55,9 @@ https://github.com/MythicMindLabs/apply/blob/master/Phase%202/doc/Milestone%20Go
 5. **Smart Contract Foundation** - ink! contract for payment recording and history
 
 ---
+
+<img width="1122" height="807" alt="API Integration Architecture External API Connections" src="https://github.com/MythicMindLabs/apply/blob/master/Phase%202/diagrams/API%20Integration%20Architecture%20External%20API%20Connections%20.png" />
+
 
 ## 🚀 **Quick Start**
 
@@ -101,6 +109,9 @@ npm run dev
 | **Alternative Syntax** | `"Send Alice 5 tokens"` | Alternative command structure |
 
 ---
+
+<img width="1122" height="807" alt="Web Application Architecture" src="https://github.com/MythicMindLabs/apply/blob/master/Phase%202/diagrams/Web%20Application%20Architecture.png" />
+
 
 ## 📁 **Project Structure**
 
@@ -199,6 +210,8 @@ EchoPay-2 is designed with accessibility as a core principle:
 - **Web Speech API** for voice recognition
 - **ElevenLabs** integration for voice synthesis
 
+
+
 ### **Backend Infrastructure**
 - **ink! Smart Contracts** in Rust
 - **Substrate** blockchain runtime
@@ -225,11 +238,17 @@ EchoPay-2 is designed with accessibility as a core principle:
 ---
 ## 🔧 Technical Architecture
 
+<img width="1122" height="807" alt="Internal API Struture" src="https://github.com/MythicMindLabs/apply/blob/master/Phase%202/diagrams/Internal%20API%20Struture.png" />
+
+
 ### Frontend (React + TypeScript + Vite)
 - **Voice Recognition**: Web Speech API integration
 - **NLP Processing**: Advanced command parsing and validation
 - **Wallet Connectivity**: @polkadot/api integration
 - **User Interface**: Accessibility-first design principles
+
+<img width="1122" height="807" alt="System Decomposition" src="https://github.com/MythicMindLabs/apply/blob/master/Phase%202/diagrams/System%20Decomposition.png" />
+
 
 ### Smart Contract (ink! on Polkadot)
 - **Language**: Rust with ink! framework
@@ -238,6 +257,9 @@ EchoPay-2 is designed with accessibility as a core principle:
   - `get_payment_history()` - Retrieve user transaction history
   - `get_my_payment_history()` - Personal history convenience function
 - **Events**: `PaymentRecorded` for blockchain monitoring
+
+<img width="1122" height="807" alt="System Architecture Diagram" src="https://github.com/MythicMindLabs/apply/blob/master/Phase%202/diagrams/System%20Architecture%20Diagram.png" />
+
 
 ### Supported Networks
 - **DOT**: Polkadot Mainnet
@@ -263,6 +285,10 @@ EchoPay-2 is designed with accessibility as a core principle:
 - 🔄 Multi-factor authentication
 - 🔄 Enterprise API integrations
 - 🔄 Mainnet deployment
+
+<img width="1122" height="807" alt="Security Architecture Diagram" src="https://github.com/MythicMindLabs/apply/blob/master/Phase%202/diagrams/Security%20Architecture%20Diagram.png" />
+
+
 
 ### **Future Enhancements**
 - 🔮 AI-powered conversation interface

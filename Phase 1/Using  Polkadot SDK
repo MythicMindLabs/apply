@@ -14,46 +14,46 @@ const transfer = this.api.tx.balances.transferKeepAlive(
     amount
 );
 await transfer.signAndSend(account, callback);
-
+```
 
 ## 2. @polkadot/extension-dapp - Wallet Integration
 
+```javascript
 // Wallet Detection & Connection
 const extensions = await web3Enable('EchoPay-2');
 const accounts = await web3Accounts();
 const injector = await web3FromAddress(selectedAccount.address);
+```
 
+---
 
-🎯 Core Polkadot SDK Functionality Implemented
-Native DOT Transfers
-Uses api.tx.balances.transferKeepAlive() for secure DOT payments
+## 🎯 Core Polkadot SDK Functionality Implemented
 
-Direct integration with Polkadot's native balance module
+### **Native DOT Transfers**
+- Uses `api.tx.balances.transferKeepAlive()` for secure DOT payments
+- Direct integration with Polkadot's native balance module
+- No smart contracts required for basic transfers
 
-No smart contracts required for basic transfers
+### **Account Management**
+- Multi-account support via Polkadot's account system
+- Address validation using Polkadot's SS58 format
+- Balance querying: `api.query.system.account(address)`
 
-Account Management
-Multi-account support via Polkadot's account system
+### **Transaction Lifecycle**
+- Transaction creation, signing, and submission
+- Real-time transaction status tracking
+- Block finalization confirmation
 
-Address validation using Polkadot's SS58 format
+### **Network Integration**
+- Connects to Polkadot mainnet (`wss://rpc.polkadot.io`)
+- Support for testnets (Westend, Rococo)
+- WebSocket RPC communication
 
-Balance querying: api.query.system.account(address)
-
-Transaction Lifecycle
-Transaction creation, signing, and submission
-
-Real-time transaction status tracking
-
-Block finalization confirmation
-
-Network Integration
-Connects to Polkadot mainnet (wss://rpc.polkadot.io)
-
-Support for testnets (Westend, Rococo)
-
+---
 
 ## 🔄 Voice-to-Polkadot Workflow
 
+```mermaid
 sequenceDiagram
     participant U as User
     participant V as Voice API
@@ -71,42 +71,33 @@ sequenceDiagram
     SDK->>N: transaction.signAndSend()
     N->>SDK: Transaction status updates
     SDK->>U: Block finalization confirmation
+```
 
+**Step-by-Step Breakdown:**
+1. **Voice Command**: `"Send 5 DOT to Alice"`
+2. **Parse command** → Extract amount + recipient  
+3. **Polkadot SDK**: `api.tx.balances.transferKeepAlive()`
+4. **Wallet Extension**: Sign transaction via injector
+5. **Submit**: `transaction.signAndSend()`
+6. **Track**: Monitor transaction status
+7. **Confirm**: Block finalization
 
-Step-by-Step Breakdown:
+---
 
-Voice Command: "Send 5 DOT to Alice"
+## 📋 Key Differences from Original Hackathon Submission
 
-Parse command → Extract amount + recipient
+### **Original Hackathon Version Used:**
+- Moonbeam (Ethereum-compatible parachain)
+- Hardhat + Solidity smart contracts
+- Web3.js for Ethereum-style interactions
 
-Polkadot SDK: api.tx.balances.transferKeepAlive()
+### **New MVP Uses:**
+- Native Polkadot integration
+- `@polkadot/api` SDK directly
+- No smart contracts needed
+- Pure DOT transfers via Substrate runtime
 
-Wallet Extension: Sign transaction via injector
-
-Submit: transaction.signAndSend()
-
-Track: Monitor transaction status
-
-Confirm: Block finalization
-
-📋 Key Differences from Original Hackathon Submission
-Original Hackathon Version Used:
-Moonbeam (Ethereum-compatible parachain)
-
-Hardhat + Solidity smart contracts
-
-Web3.js for Ethereum-style interactions
-
-New MVP Uses:
-Native Polkadot integration
-
-@polkadot/api SDK directly
-
-No smart contracts needed
-
-Pure DOT transfers via Substrate runtime
-
-
+```mermaid
 graph TD
     subgraph "Original Hackathon"
         A1[Voice Command] --> B1[Web3.js]
@@ -122,10 +113,12 @@ graph TD
     
     style A1 fill:#ff9999
     style A2 fill:#99ff99
-
+```
 
 ---
+
 ## 🛠️ Technical Benefits
+
 | **Aspect** | **Original** | **New MVP** |
 |------------|-------------|-------------|
 | **Complexity** | Smart contracts required | Direct runtime calls |

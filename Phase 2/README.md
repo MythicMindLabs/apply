@@ -191,11 +191,11 @@ EchoPay-2 is designed with accessibility as a core principle:
 
 ## 📖 **Documentation**
 
-- [API Documentation](./docs/API.md)
-- [Development Guide](./docs/DEVELOPMENT.md)
-- [Deployment Guide](./docs/DEPLOYMENT.md)
-- [Voice Commands Reference](./docs/VOICE-COMMANDS.md)
-- [Troubleshooting](./docs/TROUBLESHOOTING.md)
+- [API Documentation](./doc/API.md)
+- [Development Guide](./doc/DEVELOPMENT.md)
+- [Deployment Guide](./doc/DEPLOYMENT.md)
+- [Voice Commands Reference](./doc/VOICE-COMMANDS.md)
+- [Troubleshooting](./doc/TROUBLESHOOTING.md)
 
 ---
 

@@ -24,6 +24,25 @@
 - **Transaction History** - Complete payment tracking
 - **Mobile Responsive** - PWA support for mobile devices
 
+
+[Implemented: Core Voice Functionality](
+https://github.com/MythicMindLabs/apply/blob/master/Phase%201/docs/Implemented%3A%20Core%20Voice%20Functionality.md)
+
+[MVP Features]( 
+https://github.com/MythicMindLabs/apply/blob/master/Phase%201/docs/MVP%20Features.md)
+
+[Using Polkadot SDK]( 
+https://github.com/MythicMindLabs/apply/blob/master/Phase%201/docs/Using%20Polkadot%20SDK.md)
+
+[Test Data.md]( 
+https://github.com/MythicMindLabs/apply/blob/master/Phase%201/docs/Test%20Data.md)
+
+[Known Issues & Required Fixes]( https://github.com/MythicMindLabs/apply/blob/master/Phase%201/docs/Known%20Issues%20%26%20Required%20Fixes.md)
+
+[Phase 1 Analysis]( 
+https://github.com/MythicMindLabs/apply/blob/master/Phase%201/docs/Phase%201%20Analysis.md)
+
+
 ---
 
 ## 🏗️ Architecture Overview

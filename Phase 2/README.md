@@ -19,6 +19,10 @@
 - ♿ **WCAG 2.1 AA accessibility** compliance
 - 🧪 **85%+ test coverage** with comprehensive quality assurance
 
+[Milestone 1](
+https://github.com/MythicMindLabs/apply/blob/master/Phase%202/doc/Milestone%20Goals%201.md)
+
+
 ---
 
 ## 🏆 **Achievements**

@@ -78,21 +78,3 @@ flowchart TD
 
 ---
 
-## 📋 Suggested Fix Order
-
-1. **🚀 Deploy to HTTPS** (enables voice features)
-2. **🔗 Fix wallet integration** (enables real transactions)  
-3. **🎙️ Improve voice permission handling** (better UX)
-4. **💸 Implement actual transaction logic** (core functionality)
-5. **🌐 Fix network/currency display** (reduces confusion)
-6. **📱 Mobile optimization** (broader accessibility)
-7. **✨ UI polish** (loading states, error handling)
-
----
-
-## 💡 Quick Wins Available
-
-- **Network Configuration**: Simple config change to show "DOT" instead of "WND"
-- **Error Message Cleanup**: Add auto-dismiss timers for error states  
-- **Touch Target Sizing**: CSS-only fixes for mobile accessibility
-- **Loading Indicators**: Basic spinners during async operations

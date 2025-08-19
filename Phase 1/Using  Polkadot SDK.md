@@ -97,23 +97,6 @@ sequenceDiagram
 - No smart contracts needed
 - Pure DOT transfers via Substrate runtime
 
-```mermaid
-graph TD
-    subgraph "Original Hackathon"
-        A1[Voice Command] --> B1[Web3.js]
-        B1 --> C1[Solidity Smart Contract]
-        C1 --> D1[Moonbeam Parachain]
-    end
-    
-    subgraph "New MVP"
-        A2[Voice Command] --> B2[@polkadot/api]
-        B2 --> C2[Native Balance Module]
-        C2 --> D2[Polkadot Mainnet]
-    end
-    
-    style A1 fill:#ff9999
-    style A2 fill:#99ff99
-```
 
 ---
 

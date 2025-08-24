@@ -1,0 +1,93 @@
+{
+  "name": "echopay-2",
+  "version": "2.1.0",
+  "description": "Voice-activated payment dApp for Polkadot ecosystem - Production Ready",
+  "keywords": [
+    "polkadot",
+    "voice-payments",
+    "accessibility",
+    "web3",
+    "blockchain",
+    "dapp",
+    "cryptocurrency",
+    "substrate",
+    "ink",
+    "cross-chain"
+  ],
+  "author": {
+    "name": "EchoPay-2 Team",
+    "email": "team@echopay.io",
+    "url": "https://echopay.io"
+  },
+  "license": "MIT",
+  "homepage": "https://echopay.io",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/echopay-team/echopay-2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/echopay-team/echopay-2/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "scripts": {
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:contracts\"",
+    "dev:frontend": "cd frontend/voice-payment-dapp && npm run dev",
+    "dev:contracts": "echo 'Contract development server not implemented'",
+    "build": "npm run build:frontend && npm run build:contracts",
+    "build:frontend": "cd frontend/voice-payment-dapp && npm run build",
+    "build:contracts": "cd contracts/payment_recorder && cargo contract build",
+    "test": "npm run test:frontend && npm run test:contracts",
+    "test:frontend": "cd frontend/voice-payment-dapp && npm test",
+    "test:contracts": "cd contracts/payment_recorder && cargo test",
+    "test:e2e": "cd tests/e2e && npx playwright test",
+    "test:security": "cd tests && npm run security",
+    "test:performance": "cd tests && npm run performance",
+    "lint": "npm run lint:frontend && npm run lint:contracts",
+    "lint:frontend": "cd frontend/voice-payment-dapp && npm run lint",
+    "lint:contracts": "cd contracts/payment_recorder && cargo clippy",
+    "format": "npm run format:frontend && npm run format:contracts",
+    "format:frontend": "cd frontend/voice-payment-dapp && npm run format",
+    "format:contracts": "cd contracts/payment_recorder && cargo fmt",
+    "deploy": "npm run deploy:frontend && npm run deploy:contracts",
+    "deploy:frontend": "cd frontend/voice-payment-dapp && npm run deploy",
+    "deploy:contracts": "sh scripts/deploy-contract.sh",
+    "setup": "sh scripts/setup-dev.sh",
+    "clean": "rm -rf node_modules frontend/voice-payment-dapp/node_modules frontend/voice-payment-dapp/dist contracts/payment_recorder/target",
+    "audit": "npm audit && cd frontend/voice-payment-dapp && npm audit",
+    "security-scan": "sh scripts/security-audit.sh",
+    "docs": "cd docs && mdbook serve",
+    "preview": "cd frontend/voice-payment-dapp && npm run preview"
+  },
+  "workspaces": [
+    "frontend/voice-payment-dapp",
+    "tests/*"
+  ],
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.1.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run test"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{md,json}": [
+      "prettier --write"
+    ],
+    "*.rs": [
+      "cargo fmt --"
+    ]
+  }
+}

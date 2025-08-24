@@ -2,131 +2,39 @@
   "name": "echopay-2-frontend",
   "private": true,
   "version": "2.1.0",
-  "description": "EchoPay-2 Voice Payment Interface - Production Ready Frontend",
+  "description": "EchoPay-2 Voice Payment Interface",
   "type": "module",
-  "keywords": [
-    "polkadot",
-    "voice-payments",
-    "web3",
-    "accessibility",
-    "react",
-    "typescript",
-    "blockchain"
-  ],
-  "author": {
-    "name": "EchoPay-2 Team",
-    "email": "team@echopay.io",
-    "url": "https://echopay.io"
-  },
-  "license": "MIT",
-  "homepage": "https://echopay.io",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/echopay-team/echopay-2.git",
-    "directory": "frontend/voice-payment-dapp"
-  },
-  "bugs": {
-    "url": "https://github.com/echopay-team/echopay-2/issues"
-  },
-  "engines": {
-    "node": ">=18.0.0",
-    "npm": ">=8.0.0"
-  },
   "scripts": {
     "dev": "vite --host --port 3000",
     "build": "tsc && vite build",
     "preview": "vite preview --port 3000",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "lint:fix": "eslint . --ext ts,tsx --fix",
-    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,md}\"",
-    "format:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx,json,css,md}\"",
     "test": "vitest",
-    "test:ui": "vitest --ui",
-    "test:run": "vitest run",
-    "test:coverage": "vitest --coverage",
-    "test:e2e": "playwright test",
-    "test:e2e:ui": "playwright test --ui",
-    "test:a11y": "axe-playwright",
-    "type-check": "tsc --noEmit",
-    "analyze": "npx vite-bundle-analyzer",
-    "clean": "rm -rf dist node_modules/.vite",
-    "deploy": "npm run build && npm run deploy:vercel",
-    "deploy:vercel": "vercel --prod",
-    "deploy:netlify": "npm run build && netlify deploy --prod --dir=dist",
-    "start": "npm run preview",
-    "postinstall": "husky install"
+    "deploy": "npm run build && vercel --prod"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@polkadot/api": "^10.11.2",
-    "@polkadot/api-contract": "^10.11.2",
     "@polkadot/extension-dapp": "^0.46.6",
     "@polkadot/types": "^10.11.2",
-    "@polkadot/util": "^12.6.2",
-    "@polkadot/util-crypto": "^12.6.2",
-    "@polkadot/keyring": "^12.6.2",
-    "axios": "^1.6.2",
-    "crypto-js": "^4.2.0",
     "framer-motion": "^10.16.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.12.0",
-    "react-speech-kit": "^3.0.1",
-    "zustand": "^4.4.7"
+    "react-icons": "^4.12.0"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^6.1.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^14.5.1",
-    "@types/crypto-js": "^4.2.1",
-    "@types/dom-speech-recognition": "^0.0.4",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@typescript-eslint/eslint-plugin": "^6.14.0",
     "@typescript-eslint/parser": "^6.14.0",
     "@vitejs/plugin-react": "^4.2.1",
-    "@vitest/ui": "^1.0.4",
-    "autoprefixer": "^10.4.16",
-    "axe-playwright": "^1.2.3",
     "eslint": "^8.55.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
-    "eslint-plugin-jsx-a11y": "^6.8.0",
-    "husky": "^8.0.3",
-    "jsdom": "^23.0.1",
-    "lint-staged": "^15.2.0",
-    "playwright": "^1.40.1",
-    "postcss": "^8.4.32",
-    "prettier": "^3.1.1",
-    "tailwindcss": "^3.3.6",
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
-    "vite-bundle-analyzer": "^0.7.0",
-    "vite-plugin-pwa": "^0.17.4",
-    "vitest": "^1.0.4",
-    "workbox-window": "^7.0.0"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{json,css,md}": [
-      "prettier --write"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "vitest": "^1.0.4"
   }
 }

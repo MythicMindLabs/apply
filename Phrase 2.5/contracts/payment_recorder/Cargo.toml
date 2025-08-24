@@ -5,40 +5,17 @@ authors = ["EchoPay-2 Team <team@echopay.io>"]
 edition = "2021"
 description = "Enhanced Payment Recording Smart Contract for EchoPay-2"
 license = "MIT"
-repository = "https://github.com/echopay-team/echopay-2"
-homepage = "https://echopay.io"
-keywords = ["polkadot", "substrate", "ink", "smart-contract", "payments"]
-categories = ["cryptography::cryptocurrencies", "web-programming"]
+repository = "https://github.com/YanniWu88/EchoPay-2"
 
 [dependencies]
 ink = { version = "4.3", default-features = false }
 scale = { package = "parity-scale-codec", version = "3.6", default-features = false, features = ["derive"] }
 scale-info = { version = "2.9", default-features = false, features = ["derive"], optional = true }
 
-# Additional dependencies for enhanced functionality
-ink_prelude = { version = "4.3", default-features = false }
-ink_storage = { version = "4.3", default-features = false }
-ink_env = { version = "4.3", default-features = false }
-ink_metadata = { version = "4.3", default-features = false, optional = true }
-
-# Security and utility dependencies
-sp-core = { version = "21.0", default-features = false }
-sp-std = { version = "8.0", default-features = false }
-
-[dev-dependencies]
-ink_e2e = "4.3"
-ink_lang_ir = "4.3"
-
 [lib]
 name = "payment_recorder"
 path = "lib.rs"
-crate-type = [
-    # Used for normal contract Wasm blobs.
-    "cdylib",
-    # Required for ABI generation, docs generation, and 
-    # running tests.
-    "rlib",
-]
+crate-type = ["cdylib"]
 
 [features]
 default = ["std"]
@@ -46,30 +23,5 @@ std = [
     "ink/std",
     "scale/std",
     "scale-info/std",
-    "ink_prelude/std",
-    "ink_storage/std",
-    "ink_env/std",
-    "sp-core/std",
-    "sp-std/std",
 ]
 ink-as-dependency = []
-
-# Enhanced features for EchoPay-2
-security = []
-testing = []
-integration = []
-performance = []
-
-# Experimental features
-xcm = []
-multi-currency = []
-
-[profile.release]
-panic = "abort"
-lto = true
-opt-level = "z"
-overflow-checks = true
-
-[profile.dev]
-panic = "abort"
-overflow-checks = true
